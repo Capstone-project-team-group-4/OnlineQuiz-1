@@ -10,6 +10,7 @@ import com.PhanLam.OnlineQuiz1.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Phan Lam
  */
+@CrossOrigin (origins = "http://localhost:3000")
 @RestController
 public class UserController {
     
