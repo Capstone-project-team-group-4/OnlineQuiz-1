@@ -9,6 +9,8 @@ export class AxiosInstanceGet {
         });
         newInstance.defaults.headers.post['Content-Type'] = 'application/json';
         newInstance.defaults.headers.post['Accept'] = 'application/json';
+        newInstance.defaults.headers
+            .common['Access-Control-Allow-Origin'] = '*';
         return newInstance;
     }
 }

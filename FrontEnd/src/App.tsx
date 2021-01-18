@@ -28,9 +28,8 @@ function App (): ReactElement {
   
   function signUp (event: MouseEvent<HTMLButtonElement | MouseEvent>){
     userAPI = new UserAPI ();
-    console.log (user);
-    event.preventDefault ();
     userAPI.registerUser (user);
+    event.preventDefault ();
   }
 
   return (
@@ -56,7 +55,9 @@ function App (): ReactElement {
                 label="User ID"
                 // value = {user.userID}
                 autoFocus
-                onChange = {(event) => {setUser (updateUser (event));}}
+                onChange = {(event) => {
+                  setUser (updateUser (event));
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -69,7 +70,9 @@ function App (): ReactElement {
                 type="text"
                 id="userName"
                 autoComplete="User-name"
-                onChange = {(event) => {setUser (updateUser (event));}}
+                onChange = {(event) => {
+                  setUser (updateUser (event));
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -81,7 +84,9 @@ function App (): ReactElement {
                 label="Email Address"
                 name="email"
                 autoComplete="Email-address"
-                onChange = {(event) => {setUser (updateUser (event));}}
+                onChange = {(event) => {
+                  setUser (updateUser (event));
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -92,7 +97,9 @@ function App (): ReactElement {
             fullWidth
             variant="contained"
             color="primary"
-            onClick = {(event) => {signUp (event);}}
+            onClick = {(event) => {
+              signUp (event);
+            }}
           >
             Sign Up
           </Button>

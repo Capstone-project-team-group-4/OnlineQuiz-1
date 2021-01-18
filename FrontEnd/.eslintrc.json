@@ -47,7 +47,7 @@
         "default-case": "error",
         "default-case-last": "error",
         "default-param-last": "error",
-        "dot-location": "error",
+        "dot-location": "off",
         "dot-notation": "off",
         "eol-last": "off",
         "eqeqeq": "error",
