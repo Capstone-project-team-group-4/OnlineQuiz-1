@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -38,15 +40,14 @@ public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "RoleID", nullable = false)
+    private Integer roleID;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "RoleID", nullable = false, length = 100)
-    private String roleID;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 2147483647)
-    @Column(name = "RoleName", nullable = false, length = 2147483647)
+    @Size(min = 1, max = 500)
+    @Column(name = "RoleName", nullable = false, length = 500)
     private String roleName;
     @JoinTable(name = "UserRole", joinColumns = {
         @JoinColumn(name = "RoleID", referencedColumnName = "RoleID", nullable = false)}, inverseJoinColumns = {
@@ -57,20 +58,20 @@ public class Role implements Serializable {
     public Role() {
     }
 
-    public Role(String roleID) {
+    public Role(Integer roleID) {
         this.roleID = roleID;
     }
 
-    public Role(String roleID, String roleName) {
+    public Role(Integer roleID, String roleName) {
         this.roleID = roleID;
         this.roleName = roleName;
     }
 
-    public String getRoleID() {
+    public Integer getRoleID() {
         return roleID;
     }
 
-    public void setRoleID(String roleID) {
+    public void setRoleID(Integer roleID) {
         this.roleID = roleID;
     }
 
